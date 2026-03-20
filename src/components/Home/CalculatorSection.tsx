@@ -46,7 +46,7 @@ const CalculatorSection: React.FC = () => {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             >
               Analyze Your <span className="text-primary">Potential</span>
             </motion.h2>

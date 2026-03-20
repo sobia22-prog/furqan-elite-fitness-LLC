@@ -23,8 +23,21 @@ const Navbar: React.FC = () => {
     <nav style={{ backgroundColor: 'var(--color-bg-darker)', borderBottom: '1px solid var(--color-border)' }} className="sticky z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold uppercase tracking-wide text-primary">
-          Furqan Elite<span className="text-white">Fitness</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src="/fefc.png"
+            alt="FEF Logo"
+            className="object-contain"
+            style={{ maxHeight: '44px', width: 'auto' }}
+          />
+          <div className="flex flex-col justify-center">
+            <span className="text-lg md:text-xl font-bold uppercase tracking-wide text-primary leading-tight">
+              Furqan Elite
+            </span>
+            <span className="text-lg md:text-xl font-bold uppercase tracking-wide text-white leading-none">
+              Fitness
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -33,9 +46,8 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-sm font-medium transition-colors ${
-                location.pathname === link.path ? 'text-primary' : 'text-muted hover:text-white'
-              }`}
+              className={`text-sm font-medium transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-muted hover:text-white'
+                }`}
             >
               {link.name}
             </Link>
@@ -64,9 +76,8 @@ const Navbar: React.FC = () => {
               key={link.name}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className={`text-lg font-medium transition-colors ${
-                location.pathname === link.path ? 'text-primary' : 'text-muted'
-              }`}
+              className={`text-lg font-medium transition-colors ${location.pathname === link.path ? 'text-primary' : 'text-muted'
+                }`}
             >
               {link.name}
             </Link>

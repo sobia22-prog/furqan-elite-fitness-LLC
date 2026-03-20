@@ -1,8 +1,8 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { MapPin } from 'lucide-react';
+import { MapPin, LocateFixed } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Custom Gold Marker Icon
@@ -20,6 +20,23 @@ const goldIcon = new L.DivIcon({
   popupAnchor: [0, -40]
 });
 
+// Component to handle recentering the map
+const RecenterButton = ({ position }: { position: [number, number] }) => {
+  const map = useMap();
+  return (
+    <button
+      onClick={(e) => {
+        e.preventDefault();
+        map.setView(position, 15, { animate: true });
+      }}
+      className="absolute top-6 right-6 z-[1000] bg-card border border-border p-3 rounded-full text-primary shadow-gold hover:bg-primary hover:text-black transition-all group"
+      title="Recenter Map"
+    >
+      <LocateFixed size={24} className="group-hover:scale-110 transition-transform" />
+    </button>
+  );
+};
+
 const MapSection: React.FC = () => {
   const position: [number, number] = [25.0794, 55.1362]; // Dubai Marina Coordinates
 
@@ -31,7 +48,7 @@ const MapSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-widest"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-widest"
           >
             Our <span className="text-primary">Location</span>
           </motion.h2>
@@ -50,7 +67,7 @@ const MapSection: React.FC = () => {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden border border-border shadow-2xl h-[450px] relative z-10"
+          className="rounded-2xl overflow-hidden border border-border shadow-2xl h-[300px] md:h-[450px] relative z-10"
         >
           <MapContainer 
             center={position} 
@@ -58,6 +75,7 @@ const MapSection: React.FC = () => {
             scrollWheelZoom={false} 
             style={{ height: '100%', width: '100%' }}
           >
+            <RecenterButton position={position} />
             {/* Premium Dark Theme Tile Layer that matches the Elite Fitness aesthetic */}
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'

@@ -55,9 +55,9 @@ const SuccessStoriesSection: React.FC = () => {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold mb-4 capitalize"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 capitalize"
             >
-              Real Results. <span className="text-primary">Real Transformations.</span>
+              Real Results. <span className="text-primary italic">Real Transformations.</span>
             </motion.h2>
             <motion.p 
                initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ const SuccessStoriesSection: React.FC = () => {
 
                   {/* Text Content */}
                   <div className="p-8 relative flex flex-col flex-grow">
-                    <span className="absolute top-4 left-6 text-6xl text-primary/20 font-serif leading-none">"</span>
+                    <span className="absolute top-4 left-6 text-4xl sm:text-6xl text-primary/20 font-serif leading-none">"</span>
                     <p className="text-muted italic relative z-10 mt-6 flex-grow leading-relaxed">
                       {story.quote}
                     </p>

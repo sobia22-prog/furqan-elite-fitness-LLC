@@ -143,3 +143,32 @@ img, video {
 .leaflet-container {
   font-family: var(--font-body) !important;
 }
+
+/* Leaflet Zoom Controls */
+.leaflet-bar {
+  border: none !important;
+  box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.2) !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background-color: var(--color-bg-card) !important;
+  color: var(--color-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  transition: all 0.3s ease !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--color-black) !important;
+}
+
+.leaflet-disabled {
+  color: var(--color-text-muted) !important;
+  background-color: var(--color-bg-dark) !important;
+  cursor: not-allowed !important;
+}

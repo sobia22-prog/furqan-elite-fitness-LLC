@@ -9,9 +9,17 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Info */}
           <div>
-            <h3 className="text-2xl font-bold uppercase tracking-wide text-primary mb-4">
-              Furqan Elite<span className="text-white">Fitness</span>
-            </h3>
+            <Link to="/" className="flex items-center gap-3 mb-4">
+              <img
+                src="/fefc.png"
+                alt="FEF Logo"
+                className="object-contain"
+                style={{ maxHeight: '60px', width: 'auto' }}
+              />
+              <span className="text-xl md:text-2xl font-bold uppercase tracking-wide text-primary">
+                Furqan Elite<br /><span className="text-white">Fitness</span>
+              </span>
+            </Link>
             <p className="text-muted mb-6">
               Transforming Bodies. Building Elite Mindsets. Premium personal training and online coaching based in Dubai.
             </p>

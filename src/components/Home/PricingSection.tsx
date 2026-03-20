@@ -16,9 +16,9 @@ const PricingSection: React.FC = () => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wide"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wide"
           >
-            Invest In <span className="text-primary">Yourself</span>
+            Investment In <span className="text-primary">Yourself</span>
           </motion.h2>
           <motion.p 
              initial={{ opacity: 0, y: 20 }}
@@ -52,9 +52,9 @@ const PricingSection: React.FC = () => {
 
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                <div className="mb-4">
-                  <span className="text-5xl font-extrabold text-white">AED {pkg.pricePerSession}</span>
-                  <span className="text-muted text-lg font-medium">/ session</span>
+                <div className="mb-6 flex items-baseline justify-center gap-2">
+                  <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">AED {pkg.pricePerSession}</span>
+                  <span className="text-muted">/ session</span>
                 </div>
                 <p className="text-sm text-primary uppercase tracking-widest font-semibold border border-primary/20 bg-primary/5 inline-block px-4 py-2 rounded-md">
                   Total: AED {pkg.totalPrice} ({pkg.sessions} Sessions)

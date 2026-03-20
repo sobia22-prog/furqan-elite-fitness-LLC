@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
               <img 
                 src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Furqan Elite Trainer" 
-                className="rounded-lg shadow-2xl border border-border grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-2xl border border-border grayscale hover:grayscale-0 transition-all duration-500"
               />
             </motion.div>
             {/* Decors */}
@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
             >
               Meet <span className="text-primary">Furqan</span>
             </motion.h2>
@@ -56,7 +56,7 @@ const AboutSection: React.FC = () => {
                 As a fully certified Elite Personal Trainer based in Dubai, I’ve dedicated my life to helping high-performers, busy professionals, and individuals unlock their true physical potential. With over a decade of hands-on experience in the fitness industry, I specialize in sustainable fat loss, lean muscle building, and holistic body transformations.
               </p>
               
-              <div className="pt-6 border-t border-border grid grid-cols-2 gap-6">
+              <div className="pt-6 border-t border-border grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-bold text-white mb-2 uppercase tracking-wide">Specializations</h4>
                   <ul className="space-y-2 text-sm">
