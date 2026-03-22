@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                 style={{ maxHeight: '60px', width: 'auto' }}
               />
               <span className="text-xl md:text-2xl font-bold uppercase tracking-wide text-primary">
-                Furqan Elite<br /><span className="text-white">Fitness</span>
+                Furqan Elite<br /><span className="text-white">Fitness LLC</span>
               </span>
             </Link>
             <p className="text-muted mb-6">

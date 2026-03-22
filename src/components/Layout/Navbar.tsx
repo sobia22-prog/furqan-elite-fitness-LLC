@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
               Furqan Elite
             </span>
             <span className="text-lg md:text-xl font-bold uppercase tracking-wide text-white leading-none">
-              Fitness
+              Fitness LLC
             </span>
           </div>
         </Link>
