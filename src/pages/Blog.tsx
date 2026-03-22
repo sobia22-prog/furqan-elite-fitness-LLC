@@ -11,7 +11,7 @@ const Blog: React.FC = () => {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Fitness Blog & Insights | Furqan Elite Fitness Dubai"
+        title="Fitness Blog & Insights | Furqan Elite Fitness LLC Dubai"
         description="Read articles on fat loss, muscle building, and mindset written by Elite Trainer Furqan."
       />
 

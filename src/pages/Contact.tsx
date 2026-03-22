@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Contact Furqan Elite Fitness | VIP Personal Training Dubai"
+        title="Contact Furqan Elite Fitness LLC | VIP Personal Training Dubai"
         description="Get in touch to book a consultation or inquire about our premium fitness programs."
       />
 

@@ -9,9 +9,9 @@ interface SEOProps {
   image?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({ 
-  title = "Furqan Elite Fitness | Premium Personal Trainer in Dubai", 
-  description = "Achieve your dream physique with Furqan Elite Fitness. Specialized in fat loss, muscle gain, and transformation programs in Dubai.",
+const SEO: React.FC<SEOProps> = ({
+  title = "Furqan Elite Fitness LLC | Premium Personal Trainer in Dubai",
+  description = "Achieve your dream physique with Furqan Elite Fitness LLC. Specialized in fat loss, muscle gain, and transformation programs in Dubai.",
   keywords = "Personal Trainer in Dubai, Fitness Coach, Fat Loss Trainer Dubai, Gym Coach UAE, Online Coaching, Ramadan Workout Dubai",
   url = "https://furqanelitefitness.com",
   image = "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80"
@@ -21,7 +21,7 @@ const SEO: React.FC<SEOProps> = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />

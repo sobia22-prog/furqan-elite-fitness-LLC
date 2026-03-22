@@ -17,13 +17,13 @@ const iconMap: Record<string, React.ElementType> = {
 const Services: React.FC = () => {
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Elite Training Services | Furqan Elite Fitness Dubai"
+      <SEO
+        title="Elite Training Services | Furqan Elite Fitness LLC Dubai"
         description="Explore our elite personal training, online coaching, and specialized Ramadan body transformation programs."
       />
 
-      <PageHero 
-        title="Our Elite" 
+      <PageHero
+        title="Our Elite"
         highlightedText="Programs"
         subtitle="No matter your starting point or your lifestyle constraints, there is a tailored protocol here designed exclusively for you."
       />
@@ -53,7 +53,7 @@ const Services: React.FC = () => {
                   </div>
 
                   <p className="text-muted text-lg mb-10 leading-relaxed flex-grow">{service.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-6 mb-10 p-6 bg-darker rounded-xl border border-border/50">
                     <div>
                       <span className="block text-xs uppercase tracking-widest text-primary mb-1">Duration</span>
@@ -64,15 +64,15 @@ const Services: React.FC = () => {
                       <span className="font-bold text-white text-sm">{service.priceRange}</span>
                     </div>
                     <div className="col-span-2 border-t border-border/50 pt-4 mt-2">
-                       <span className="block text-xs uppercase tracking-widest text-primary mb-1">Expected Results</span>
-                       <span className="font-bold text-white text-sm">{service.resultsExpected}</span>
+                      <span className="block text-xs uppercase tracking-widest text-primary mb-1">Expected Results</span>
+                      <span className="font-bold text-white text-sm">{service.resultsExpected}</span>
                     </div>
                   </div>
 
-                  <Button 
+                  <Button
                     href={`https://wa.me/971501234567?text=Hi Furqan, I'm interested in the ${service.title} program`}
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     variant="outline"
                     fullWidth
                     className="mt-auto"

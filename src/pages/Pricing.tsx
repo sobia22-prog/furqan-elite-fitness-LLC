@@ -8,13 +8,13 @@ import PageHero from '../components/Layout/PageHero';
 const Pricing: React.FC = () => {
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Packages & Pricing | Furqan Elite Fitness Dubai"
+      <SEO
+        title="Packages & Pricing | Furqan Elite Fitness LLC Dubai"
         description="Transparent high-ticket pricing packages for personal training and coaching in Dubai."
       />
 
-      <PageHero 
-        title="Elite" 
+      <PageHero
+        title="Elite"
         highlightedText="Packages"
         subtitle="Choose your commitment level. Your greatest ROI will always be your health."
       />
@@ -32,33 +32,33 @@ const Pricing: React.FC = () => {
           </div>
 
           <div className="space-y-6">
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               className="bg-card p-6 md:p-8 rounded-xl border border-border"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-card p-6 md:p-8 rounded-xl border border-border"
             >
               <h3 className="text-xl font-bold text-white mb-3">Do you offer payment plans?</h3>
               <p className="text-muted leading-relaxed">Yes. We understand that premium coaching is an investment. We offer flexible split-payment options for our 24 and 36 session Transformation packages.</p>
             </motion.div>
 
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.1 }}
-               className="bg-card p-6 md:p-8 rounded-xl border border-border"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-card p-6 md:p-8 rounded-xl border border-border"
             >
               <h3 className="text-xl font-bold text-white mb-3">Where do the training sessions take place?</h3>
               <p className="text-muted leading-relaxed">Sessions are conducted at partnered VIP gyms across Dubai, or we can travel to your private home/building gym depending on your location and selected package.</p>
             </motion.div>
 
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.2 }}
-               className="bg-card p-6 md:p-8 rounded-xl border border-border"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-card p-6 md:p-8 rounded-xl border border-border"
             >
               <h3 className="text-xl font-bold text-white mb-3">Is nutrition included?</h3>
               <p className="text-muted leading-relaxed">Absolutely. Every single package includes personalized macro calculation, meal planning, and supplement guidance designed to augment your specific training protocol.</p>

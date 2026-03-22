@@ -44,7 +44,7 @@ const MapSection: React.FC = () => {
     <section className="py-24 bg-dark relative z-10 border-t border-border/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -52,7 +52,7 @@ const MapSection: React.FC = () => {
           >
             Our <span className="text-primary">Location</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -63,16 +63,16 @@ const MapSection: React.FC = () => {
           </motion.p>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="rounded-2xl overflow-hidden border border-border shadow-2xl h-[300px] md:h-[450px] relative z-10"
         >
-          <MapContainer 
-            center={position} 
-            zoom={15} 
-            scrollWheelZoom={false} 
+          <MapContainer
+            center={position}
+            zoom={15}
+            scrollWheelZoom={false}
             style={{ height: '100%', width: '100%' }}
           >
             <RecenterButton position={position} />
@@ -85,7 +85,7 @@ const MapSection: React.FC = () => {
               <Popup>
                 <div className="overflow-hidden">
                   <div className="bg-primary flex items-center justify-center py-2 px-4 whitespace-nowrap">
-                    <span className="text-black font-extrabold text-[10px] uppercase tracking-[0.2em]">Furqan Elite Fitness</span>
+                    <span className="text-black font-extrabold text-[10px] uppercase tracking-[0.2em]">Furqan Elite Fitness LLC</span>
                   </div>
                   <div className="p-5 bg-card">
                     <div className="flex items-start gap-4 mb-4">
@@ -97,7 +97,7 @@ const MapSection: React.FC = () => {
                         <p className="text-[10px] text-muted leading-relaxed">VIP Partner Gyms & Premium Training Facilities.</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex flex-col gap-1.5 mb-5 uppercase tracking-widest text-[9px] font-bold">
                       <div className="flex justify-between border-b border-border/50 pb-1">
                         <span className="text-muted/60">Training Type</span>

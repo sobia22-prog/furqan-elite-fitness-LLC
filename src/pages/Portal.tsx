@@ -9,7 +9,7 @@ const Portal: React.FC = () => {
   return (
     <div className="flex flex-col">
       <SEO
-        title="VIP Client Portal Login | Furqan Elite Fitness"
+        title="VIP Client Portal Login | Furqan Elite Fitness LLC"
         description="Exclusive client portal for progress tracking, diet plans, and workout structures."
       />
 
@@ -97,8 +97,8 @@ const Portal: React.FC = () => {
                   </div>
                 </div>
 
-                <Button 
-                  type="button" 
+                <Button
+                  type="button"
                   fullWidth
                   className="mt-4"
                   onClick={() => alert('Client backend integration pending (WordPress + Members Plugin required).')}
