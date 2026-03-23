@@ -21,21 +21,24 @@ const Navbar: React.FC = () => {
 
   return (
     <nav style={{ backgroundColor: 'var(--color-bg-darker)', borderBottom: '1px solid var(--color-border)' }} className="sticky z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <img
-            src="/fefc.png"
-            alt="FEF Logo"
+            src="/logo.png"
+            alt="FTH Logo"
             className="object-contain"
             style={{ maxHeight: '44px', width: 'auto' }}
           />
-          <div className="flex flex-col justify-center">
-            <span className="text-lg md:text-xl font-bold uppercase tracking-wide text-primary leading-tight">
-              Furqan Elite
+          <div className="flex flex-col justify-center leading-none">
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-primary opacity-90 -mb-1">
+              Furqan
             </span>
-            <span className="text-lg md:text-xl font-bold uppercase tracking-wide text-white leading-none">
-              Fitness LLC
+            <span className="text-sm md:text-lg font-extrabold uppercase tracking-widest text-white">
+              Transformation
+            </span>
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+              Hub LLC
             </span>
           </div>
         </Link>

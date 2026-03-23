@@ -11,14 +11,22 @@ const Footer: React.FC = () => {
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4">
               <img
-                src="/fefc.png"
-                alt="FEF Logo"
+                src="/logo.png"
+                alt="FTH Logo"
                 className="object-contain"
                 style={{ maxHeight: '60px', width: 'auto' }}
               />
-              <span className="text-xl md:text-2xl font-bold uppercase tracking-wide text-primary">
-                Furqan Elite<br /><span className="text-white">Fitness LLC</span>
-              </span>
+              <div className="flex flex-col justify-center leading-none">
+                <span className="text-xs md:text-sm font-bold uppercase tracking-[0.4em] text-primary opacity-90 -mb-1">
+                  Furqan
+                </span>
+                <span className="text-lg md:text-2xl font-extrabold uppercase tracking-widest text-white ">
+                  Transformation
+                </span>
+                <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-white/70">
+                  Hub LLC
+                </span>
+              </div>
             </Link>
             <p className="text-muted mb-6">
               Transforming Bodies. Building Elite Mindsets. Premium personal training and online coaching based in Dubai.
