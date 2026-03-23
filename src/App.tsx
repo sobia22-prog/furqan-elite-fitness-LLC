@@ -2,6 +2,8 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import './App.css';
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from '@vercel/analytics/react';
 
 // Lazy loading pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -22,6 +24,8 @@ const LoadingFallback = () => (
 function App() {
   return (
     <Router>
+      <SpeedInsights />
+      <Analytics />
       <Layout>
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
