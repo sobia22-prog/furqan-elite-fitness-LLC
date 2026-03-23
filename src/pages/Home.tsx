@@ -12,8 +12,8 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Furqan Elite Fitness LLC | Top Personal Trainer in Dubai"
-        description="Book a free assessment with Furqan Elite Fitness LLC. Transforming bodies and building elite mindsets through personal training and online coaching."
+        title="Furqan Transformation Hub LLC | Top Personal Trainer in Dubai"
+        description="Book a free assessment with Furqan Transformation Hub LLC. Transforming bodies and building elite mindsets through personal training and online coaching."
       />
       <HeroSection />
       <AboutSection />

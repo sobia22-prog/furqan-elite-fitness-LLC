@@ -18,7 +18,7 @@ const Services: React.FC = () => {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Elite Training Services | Furqan Elite Fitness LLC Dubai"
+        title="Elite Training Services | Furqan Transformation Hub LLC Dubai"
         description="Explore our elite personal training, online coaching, and specialized Ramadan body transformation programs."
       />
 

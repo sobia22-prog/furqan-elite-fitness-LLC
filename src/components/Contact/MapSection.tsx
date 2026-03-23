@@ -85,7 +85,7 @@ const MapSection: React.FC = () => {
               <Popup>
                 <div className="overflow-hidden">
                   <div className="bg-primary flex items-center justify-center py-2 px-4 whitespace-nowrap">
-                    <span className="text-black font-extrabold text-[10px] uppercase tracking-[0.2em]">Furqan Elite Fitness LLC</span>
+                    <span className="text-black font-extrabold text-[10px] uppercase tracking-[0.2em]">Furqan Transformation Hub LLC</span>
                   </div>
                   <div className="p-5 bg-card">
                     <div className="flex items-start gap-4 mb-4">

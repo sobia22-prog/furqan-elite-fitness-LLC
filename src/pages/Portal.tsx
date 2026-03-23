@@ -9,7 +9,7 @@ const Portal: React.FC = () => {
   return (
     <div className="flex flex-col">
       <SEO
-        title="VIP Client Portal Login | Furqan Elite Fitness LLC"
+        title="VIP Client Portal Login | Furqan Transformation Hub LLC"
         description="Exclusive client portal for progress tracking, diet plans, and workout structures."
       />
 

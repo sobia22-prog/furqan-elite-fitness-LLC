@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted">
-            &copy; {new Date().getFullYear()} Furqan Elite Fitness LLC. All rights reserved.
+            &copy; {new Date().getFullYear()} Furqan Transformation Hub LLC. All rights reserved.
           </p>
           <div className="flex gap-4">
             <Link to="/privacy" className="text-sm text-muted hover:text-white transition-colors">Privacy Policy</Link>

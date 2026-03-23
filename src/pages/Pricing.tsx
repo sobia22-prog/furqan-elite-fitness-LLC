@@ -9,7 +9,7 @@ const Pricing: React.FC = () => {
   return (
     <div className="flex flex-col">
       <SEO
-        title="Packages & Pricing | Furqan Elite Fitness LLC Dubai"
+        title="Packages & Pricing | Furqan Transformation Hub LLC Dubai"
         description="Transparent high-ticket pricing packages for personal training and coaching in Dubai."
       />
 
