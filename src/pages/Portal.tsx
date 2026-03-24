@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../components/Layout/SEO';
 import PageHero from '../components/Layout/PageHero';
 import { FileText, Activity, Lock, TrendingUp } from 'lucide-react';
 import Button from '../components/UI/Button';
+import { loginUser } from '../api/auth';
 
 const Portal: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const data = await loginUser({ email, password });
+
+      if (data.token) {
+        localStorage.setItem('fth_token', data.token);
+        alert('Welcome to the Elite Portal! Redirecting...');
+        setStatus('idle');
+        // window.location.href = '/dashboard';
+      } else {
+        alert(data.message || 'Access Denied. Please check your credentials.');
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      setStatus('error');
+      alert('Connection failed. Please ensure you are online and try again.');
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <SEO
@@ -76,11 +104,14 @@ const Portal: React.FC = () => {
                 <p className="text-muted text-sm">Enter your private credentials to continue.</p>
               </div>
 
-              <form className="space-y-6 px-4 md:px-8">
+              <form onSubmit={handleLogin} className="space-y-6 px-4 md:px-8">
                 <div>
                   <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-2">Email Address</label>
                   <input
                     type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/30"
                     placeholder="client@email.com"
                   />
@@ -89,6 +120,9 @@ const Portal: React.FC = () => {
                   <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-2">Password</label>
                   <input
                     type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/30"
                     placeholder="••••••••"
                   />
@@ -98,12 +132,12 @@ const Portal: React.FC = () => {
                 </div>
 
                 <Button
-                  type="button"
+                  type="submit"
                   fullWidth
+                  disabled={status === 'loading'}
                   className="mt-4"
-                  onClick={() => alert('Client backend integration pending (WordPress + Members Plugin required).')}
                 >
-                  Enter Dashboard
+                  {status === 'loading' ? 'Authenticating...' : 'Enter Dashboard'}
                 </Button>
                 <div className="pt-6 border-t border-border/50 text-center px-4 md:px-8">
                   <p className="text-muted text-sm">Not an elite client yet? <a href="/services" className="text-primary font-bold hover:text-white transition-colors">Apply Today</a></p>

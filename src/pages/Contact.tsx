@@ -1,12 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../components/UI/Button';
 import SEO from '../components/Layout/SEO';
 import PageHero from '../components/Layout/PageHero';
-import { MapPin, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
 import MapSection from '../components/Contact/MapSection';
+import { MapPin, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
+import { submitLeadInquiry } from '../api/leads';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    goal: 'Fat Loss & Toning',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const data = await submitLeadInquiry({
+        name: `${formData.firstName} ${formData.lastName}`.trim(),
+        email: formData.email,
+        fitnessGoal: formData.goal,
+        formDetails: {
+          message: formData.message,
+        }
+      });
+
+      if (data.success) {
+        setStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          goal: 'Fat Loss & Toning',
+          message: ''
+        });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting inquiry:', error);
+      setStatus('error');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <div className="flex flex-col">
       <SEO
@@ -99,27 +147,56 @@ const Contact: React.FC = () => {
                 <p className="text-muted text-sm">Fill out the details below for a customized consultation.</p>
               </div>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-2">First Name</label>
-                    <input type="text" placeholder="John" className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/20" />
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                      placeholder="John"
+                      className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/20"
+                    />
                   </div>
                   <div>
                     <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-2">Last Name</label>
-                    <input type="text" placeholder="Doe" className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/20" />
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                      placeholder="Doe"
+                      className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/20"
+                    />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-2">Email Address</label>
-                  <input type="email" placeholder="john@example.com" className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/20" />
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="john@example.com"
+                    className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors placeholder:text-muted/20"
+                  />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-2">Primary Goal Focus</label>
                   <div className="relative">
-                    <select className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none text-muted">
+                    <select
+                      name="goal"
+                      value={formData.goal}
+                      onChange={handleChange}
+                      className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none text-muted"
+                    >
                       <option>Fat Loss & Toning</option>
                       <option>Muscle Gain & Strength</option>
                       <option>Recomposition (Lose Fat/Build Muscle)</option>
@@ -133,24 +210,39 @@ const Contact: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-2">Your Current Challenge / Message</label>
-                  <textarea rows={4} placeholder="Tell me about your fitness journey..." className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-muted/20"></textarea>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    placeholder="Tell me about your fitness journey..."
+                    className="w-full bg-darker border border-border/80 rounded-md px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-muted/20"
+                  />
                 </div>
 
                 <Button
                   type="submit"
                   fullWidth
+                  disabled={status === 'loading'}
                   className="mt-4 shadow-gold"
-                  onClick={(e) => { e.preventDefault(); alert('Email forwarding setup required.'); }}
                 >
-                  Submit Inquiry
+                  {status === 'loading' ? 'Submitting...' : status === 'success' ? 'Message Sent!' : 'Submit Inquiry'}
                 </Button>
+
+                {status === 'error' && (
+                  <p className="text-red-500 text-sm mt-4 text-center">Something went wrong. Please try again or WhatsApp directly.</p>
+                )}
+
+                {status === 'success' && (
+                  <p className="text-primary text-sm mt-4 text-center">Inquiry received! I will reach out to you within 24 hours.</p>
+                )}
 
                 <div className="pt-6 text-center">
                   <p className="text-muted text-xs">I personally respond to all inquiries within 24 business hours.</p>
                 </div>
               </form>
             </motion.div>
-
           </div>
         </div>
       </section>

@@ -12,6 +12,7 @@ const Services = lazy(() => import('./pages/Services'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const Portal = lazy(() => import('./pages/Portal'));
 const Blog = lazy(() => import('./pages/Blog'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 const LoadingFallback = () => (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/portal" element={<Portal />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={
               <div className="min-h-[70vh] flex flex-col items-center justify-center text-center">
